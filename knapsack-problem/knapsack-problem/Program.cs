@@ -16,7 +16,7 @@ namespace KnapsackProblem
 
         public Item (float weight = -1, float value = -1, Boolean random = false)
         {
-            if (random)
+            if (weight == -1 && value == -1)
             {
                 Console.Write("Podaj wage: ");
                 weight = float.Parse(Console.ReadLine());
@@ -26,7 +26,7 @@ namespace KnapsackProblem
                 return;
             }
 
-            if (weight == -1 && value == -1)
+            if (random)
             {
                 Random rnd = new Random();
                 this.weight = rnd.Next(1, 10);
